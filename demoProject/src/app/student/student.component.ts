@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IStudent } from './istudent';
+
 
 @Component({
   selector: 'app-student',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-  students:any[];
+  students:IStudent[];
   selectedEmployeeCountRadioButton : String = "all";
   constructor() {
     this.students = [

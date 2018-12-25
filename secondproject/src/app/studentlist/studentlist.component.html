@@ -1,0 +1,24 @@
+<app-studentcount
+(radioButtonChanged) ="changeTable($event)"
+>
+
+</app-studentcount>
+
+<table>
+  <thead>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Cgpa</th>
+  </thead>
+  <tbody>
+   <ng-container *ngFor="let student of studentList">
+    <tr *ngIf="currentRadioButton == 'all' ||student.gender.toLowerCase() == currentRadioButton">
+      <td>{{student.code}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.gender}}</td>
+      <td>{{student.Cgpa}}</td>
+    </tr>
+   </ng-container>
+  </tbody>
+</table>

@@ -1,0 +1,52 @@
+<app-student-count
+  [all]="getTotalStudents()"
+  [male]="getTotalMale()"
+  [female]="getTotalFemale()"
+  (countRadioButtonSelectionChanged) = "onEmployeeCountRadioButtonChanged($event)"
+></app-student-count>
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Total Marks</th>
+      <th>Cgpa</th>
+      <th>Index</th>
+      <th>Is First</th>
+      <th>Is Last</th>
+      <th>Is Even</th>
+      <th>Is Odd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="
+    let item of students;
+    trackBy: trackByStudentCode;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven = even;
+    let isOdd = odd
+  ">
+  <tr *ngIf="selectedEmployeeCountRadioButton == 'all' || selectedEmployeeCountRadioButton ==item.gender.toLowerCase() ">
+      <td>{{ item.code | uppercase }}</td>
+      <td>{{ item.name | student: item.gender }}</td>
+      <td>{{ item.gender }}</td>
+      <td>{{ item.TotalMarks }}</td>
+      <td>{{ item.cgpa | number: "2.2-3" }}</td>
+      <td>{{ i }}</td>
+      <td>{{ isFirst }}</td>
+      <td>{{ isLast }}</td>
+      <td>{{ isEven }}</td>
+      <td>{{ isOdd }}</td>
+    </tr>
+    <tr *ngIf="!students || students.length == 0">
+      <td colspan="5">No Studens Found</td>
+    </tr>
+    </ng-container>
+   
+  </tbody>
+</table>
+
+<button (click)="getEmployees()">Update Students</button>

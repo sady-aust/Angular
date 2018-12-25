@@ -1,0 +1,44 @@
+<h1>{{getFullName()}}</h1>
+<img [src]="image" alt="imgae" height="250" width="250">
+<button class="colorClass" [class] = "classToApply">My Button</button>
+<button class="colorClass" [class.boldClass] = "applyBoldClass" [class.italicsClass] ="applyItalicClass">Be careful Button</button>
+<br>
+<button disabled ="{{isDisabled}}">Click ME</button>
+<br>
+<span [innerHtml] = projectName></span>
+<br>
+<button class="colorClass" [ngClass] = 'addClasses()'>My Button</button>
+<div [innerHtml] = "badHtml"></div>
+<app-employee></app-employee>
+<input type="text" id="inputId" value="text">
+<br>
+<br>
+<button class="colorClass boldClass italicsClass"  [class.boldClass] = "!applyBoldClass">All class</button>
+
+<button class="colorClass boldClass italicsClass" [ngClass] = 'addClasses()'>All class</button>
+<br>
+<br>
+<button style="color:red"[style.font-size.px] = "fontSize" [style.font-weight] ="isBold? 'bold':'normal'">Style Binding in Angular 2</button>
+<br>
+<br>
+<button [ngStyle]="addStyle()">ngStyle</button>
+<br>
+<br>
+<button (click)="onClick()">Button Click Event</button>
+<br><br>
+Name: <input type="text" [(ngModel)]="inputValue">
+<br>
+you Entered : {{inputValue}}
+<br>
+---------------------------------------
+<br>
+Angular Ngfor trackBay
+<br>
+<app-student></app-student>
+
+
+
+
+
+
+

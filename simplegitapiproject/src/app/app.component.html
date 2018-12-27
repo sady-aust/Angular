@@ -1,0 +1,15 @@
+<div *ngIf="!users">{{statusMessage}}</div>
+<div *ngIf="users">
+  <div *ngFor="let user of users">
+    Login: {{user.login}}
+    <br>
+    Id: {{user.id}}
+    <br>
+    NodeId:{{user.node_id}}
+    <br>
+    <br>
+  </div>
+</div>
+<div *ngIf="users && users.length == 0">
+  No Data to display
+</div>
